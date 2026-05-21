@@ -1,7 +1,10 @@
-import streamlit as st
+from flask import Flask
 
-st.set_page_config(page_title="Databricks Test")
+app = Flask(__name__)
 
-st.title("Databricks App Working")
-
-st.success("Deployment Successful")
+@app.route("/")
+def home():
+    return """
+    <h1>Databricks Flask App Working</h1>
+    <p>If you can see this, deployment is working correctly.</p>
+    """
